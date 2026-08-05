@@ -29,8 +29,6 @@ export class App {
   protected readonly profile = {
     name: 'Ben Terdayet Alaa',
     title: "Étudiant Ingénieur en Informatique — Spécialité NIDS",
-    tagline:
-      "À la recherche d'un stage en DevOps pour concevoir et industrialiser des pipelines CI/CD, containeriser des applications et automatiser le déploiement d'infrastructures cloud-native.",
     phone: '+216 95 343 410',
     email: 'Alaa.benterdayet@esprit.tn',
     linkedin: 'linkedin.com/in/alaa-ben-terdayet',
