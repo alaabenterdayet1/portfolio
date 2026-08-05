@@ -14,9 +14,17 @@
 <main>
   <section id="top" class="hero">
     <div class="hero__content">
-      <p class="hero__eyebrow">Portfolio</p>
       <h1>{{ profile.name }}</h1>
       <h2>{{ profile.title }}</h2>
+      <div class="hero__contact">
+        <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        <span class="hero__sep">·</span>
+        <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+        <span class="hero__sep">·</span>
+        <a [href]="profile.linkedinUrl" target="_blank" rel="noopener">{{ profile.linkedin }}</a>
+        <span class="hero__sep">·</span>
+        <a [href]="profile.githubUrl" target="_blank" rel="noopener">{{ profile.github }}</a>
+      </div>
       <p class="hero__tagline">{{ profile.tagline }}</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#contact">Me contacter</a>
