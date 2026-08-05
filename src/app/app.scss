@@ -182,6 +182,13 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.4rem 1.6rem;
+    box-shadow: 0 10px 24px -14px rgba(15, 40, 70, 0.16);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px -14px rgba(15, 40, 70, 0.24);
+    }
   }
 
   &__header {
@@ -252,6 +259,13 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.4rem 1.6rem;
+    box-shadow: 0 10px 24px -14px rgba(15, 40, 70, 0.16);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px -14px rgba(15, 40, 70, 0.24);
+    }
 
     h4 {
       font-family: var(--font);
@@ -267,20 +281,30 @@
 
 .languages {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
   flex-wrap: wrap;
 }
 
 .language {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  align-items: center;
+  gap: 0.3rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.8rem 1.2rem;
-  min-width: 140px;
+  padding: 1.1rem 1.8rem;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 10px 24px -12px rgba(15, 40, 70, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px -12px rgba(15, 40, 70, 0.26);
+  }
 
   &__name {
     font-weight: 700;
@@ -308,11 +332,13 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.1rem 1.3rem;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 10px 24px -14px rgba(15, 40, 70, 0.16);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 
   &:hover {
     border-color: var(--gold);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px -14px rgba(15, 40, 70, 0.24);
   }
 }
 
