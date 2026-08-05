@@ -1,0 +1,125 @@
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">AB<span>.</span>T</a>
+    <nav class="nav__links">
+      <a href="#about">Profil</a>
+      <a href="#experience">Expérience</a>
+      <a href="#skills">Compétences</a>
+      <a href="#education">Formation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Portfolio</p>
+      <h1>{{ profile.name }}</h1>
+      <h2>{{ profile.title }}</h2>
+      <p class="hero__tagline">{{ profile.tagline }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">Me contacter</a>
+        <a class="btn btn--ghost" [href]="profile.githubUrl" target="_blank" rel="noopener">Voir GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h3 class="section__title">Profil</h3>
+    <p class="about__text">{{ about }}</p>
+  </section>
+
+  <section id="experience" class="section">
+    <h3 class="section__title">Expérience professionnelle</h3>
+    <div class="timeline">
+      @for (exp of experiences; track exp.role) {
+        <article class="timeline__item">
+          <div class="timeline__marker"></div>
+          <div class="timeline__card">
+            <div class="timeline__header">
+              <h4>{{ exp.role }}</h4>
+              <span class="timeline__period">{{ exp.period }}</span>
+            </div>
+            <p class="timeline__org">{{ exp.org }}</p>
+            <p class="timeline__desc">{{ exp.description }}</p>
+            <div class="tags">
+              @for (tag of exp.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h3 class="section__title">Compétences techniques</h3>
+    <div class="skills">
+      @for (group of skillGroups; track group.category) {
+        <div class="skills__group">
+          <h4>{{ group.category }}</h4>
+          <div class="tags">
+            @for (item of group.items; track item) {
+              <span class="tag">{{ item }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <h3 class="section__title">Formation académique</h3>
+    <div class="timeline timeline--compact">
+      @for (edu of education; track edu.degree) {
+        <article class="timeline__item">
+          <div class="timeline__marker"></div>
+          <div class="timeline__card">
+            <div class="timeline__header">
+              <h4>{{ edu.degree }}</h4>
+              <span class="timeline__period">{{ edu.period }}</span>
+            </div>
+            <p class="timeline__org">{{ edu.school }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="languages">
+      @for (lang of languages; track lang.name) {
+        <div class="language">
+          <span class="language__name">{{ lang.name }}</span>
+          <span class="language__level">{{ lang.level }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h3 class="section__title">Contact</h3>
+    <div class="contact__grid">
+      <a class="contact__item" [href]="'mailto:' + profile.email">
+        <span class="contact__label">Email</span>
+        <span class="contact__value">{{ profile.email }}</span>
+      </a>
+      <a class="contact__item" [href]="'tel:' + profile.phone">
+        <span class="contact__label">Téléphone</span>
+        <span class="contact__value">{{ profile.phone }}</span>
+      </a>
+      <a class="contact__item" [href]="profile.linkedinUrl" target="_blank" rel="noopener">
+        <span class="contact__label">LinkedIn</span>
+        <span class="contact__value">{{ profile.linkedin }}</span>
+      </a>
+      <a class="contact__item" [href]="profile.githubUrl" target="_blank" rel="noopener">
+        <span class="contact__label">GitHub</span>
+        <span class="contact__value">{{ profile.github }}</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; {{ currentYear }} {{ profile.name }}</p>
+</footer>
