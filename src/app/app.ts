@@ -4,7 +4,8 @@ interface Experience {
   role: string;
   org: string;
   period: string;
-  description: string;
+  description?: string;
+  highlights?: string[];
   tags: string[];
 }
 
@@ -42,12 +43,15 @@ export class App {
 
   protected readonly experiences: Experience[] = [
     {
-      role: 'Healthcare Threat Intelligence',
-      org: 'ESPRIT — Projet académique',
-      period: '2025 - 2026',
-      description:
-        "Infrastructure SOC complète : pfSense, Suricata/Snort (IDS/IPS), Wazuh (SIEM+XDR), MISP, TheHive (IRP), Shuffle (SOAR), segmentation VLAN et tunnel VPN. Corrélation des alertes Wazuh, playbooks SOAR, forensique post-incident, conformité HIPAA/GDPR/NIST. Plateforme de scoring IA des alertes avec frontend Angular (dashboards KPIs, visualisation temps réel) et backend REST Node.js/Express.js.",
-      tags: ['pfSense', 'Wazuh', 'MISP', 'TheHive', 'Shuffle SOAR', 'Angular', 'Node.js']
+      role: 'Stage Ingénieur, Full-Stack, IA & DevOps',
+      org: 'Insight Plus, Tunis',
+      period: '1er juil. - 30 août 2026',
+      highlights: [
+        "Conception d'AI Agent Reviewer, plateforme de revue de code automatisée pour GitLab avec Symfony, Angular, Gemini et Redis, contrôlant la conformité aux règles d'architecture.",
+        "Sécurisation de l'accès par authentification GitLab, limité aux projets autorisés, avec gestion des jetons et des clés dans la configuration serveur et les variables CI.",
+        "Industrialisation du pipeline GitLab CI/CD : génération OpenAPI, synchronisation Apidog, notifications Slack et intégration d'une recherche sémantique (RAG)."
+      ],
+      tags: ['Symfony', 'Angular', 'Gemini', 'Redis', 'GitLab CI/CD', 'RAG']
     },
     {
       role: 'Développeur Full-Stack — Stage d\'Immersion',
@@ -72,6 +76,17 @@ export class App {
       description:
         "Tunisie Booking : application de gestion de qualité (PHP, jQuery, HTML/CSS, Bootstrap). Group Info Comm : site vitrine responsive (HTML, CSS, JavaScript).",
       tags: ['PHP', 'jQuery', 'Bootstrap', 'HTML/CSS', 'JavaScript']
+    }
+  ];
+
+  protected readonly academicExperiences: Experience[] = [
+    {
+      role: 'Healthcare Threat Intelligence',
+      org: 'ESPRIT — Projet académique, équivalent stage',
+      period: '2025 - 2026',
+      description:
+        "Infrastructure SOC complète : pfSense, Suricata/Snort (IDS/IPS), Wazuh (SIEM+XDR), MISP, TheHive (IRP), Shuffle (SOAR), segmentation VLAN et tunnel VPN. Corrélation des alertes Wazuh, playbooks SOAR, forensique post-incident, conformité HIPAA/GDPR/NIST. Plateforme de scoring IA des alertes avec frontend Angular (dashboards KPIs, visualisation temps réel) et backend REST Node.js/Express.js.",
+      tags: ['pfSense', 'Wazuh', 'MISP', 'TheHive', 'Shuffle SOAR', 'Angular', 'Node.js']
     }
   ];
 

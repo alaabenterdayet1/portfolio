@@ -227,6 +227,17 @@
     margin-bottom: 1rem;
   }
 
+  &__highlights {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+
+    li + li {
+      margin-top: 0.55rem;
+    }
+  }
+
   &--compact &__card {
     padding: 1.1rem 1.6rem;
   }

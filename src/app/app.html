@@ -4,6 +4,7 @@
     <nav class="nav__links">
       <a href="#about">Profil</a>
       <a href="#experience">Expérience</a>
+      <a href="#academic-experience">Projets académiques</a>
       <a href="#skills">Compétences</a>
       <a href="#education">Formation</a>
       <a href="#contact">Contact</a>
@@ -41,6 +42,39 @@
     <h3 class="section__title">Expérience professionnelle</h3>
     <div class="timeline">
       @for (exp of experiences; track exp.role) {
+        <article class="timeline__item">
+          <div class="timeline__marker"></div>
+          <div class="timeline__card">
+            <div class="timeline__header">
+              <h4>{{ exp.role }}</h4>
+              <span class="timeline__period">{{ exp.period }}</span>
+            </div>
+            <p class="timeline__org">{{ exp.org }}</p>
+            @if (exp.description) {
+              <p class="timeline__desc">{{ exp.description }}</p>
+            }
+            @if (exp.highlights) {
+              <ul class="timeline__highlights">
+                @for (highlight of exp.highlights; track highlight) {
+                  <li>{{ highlight }}</li>
+                }
+              </ul>
+            }
+            <div class="tags">
+              @for (tag of exp.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="academic-experience" class="section">
+    <h3 class="section__title">Expérience académique</h3>
+    <div class="timeline">
+      @for (exp of academicExperiences; track exp.role) {
         <article class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__card">
